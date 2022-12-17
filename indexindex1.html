@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="node1.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Login</a>
+        <a href="#"><i class="fa fa-fw fa-search" id="email" onclick="home()">Home</i> </a>
+        
+      </div>
+      <div class="bg">
+        <form action="unique_id.html" method="post" container="container">
+          <h1>Login</h1>
+      
+          <label for="email"><b>User id</b></label><br>
+          <input type="text" placeholder="Enter user id"  id="email"name="email" required><br>
+      
+          <label for="psw"><b>Password</b></label><br>
+          <input type="password" id="password"placeholder="Enter Password" name="psw" required><br>
+      
+          <button type="submit" class="btn" onclick="auth()">Login</button>
+        </form>
+        <script>
+        function auth() {
+  var user_id = document.getElementById("email").value;
+  var password= document.getElementById("password").value;
+
+  var user=localStorage.setItem("uid",user_id);
+  var password=localStorage.setItem("password",password);
+
+  var user=localStorage.getItem("uid",user_id);
+  var password=localStorage.getItem("passowrd",password);
+
+  var a,b,c;
+  a="bhargavighegde";
+  b="bhargavi12345";
+
+  if(user_id=="bhargavighegde" && password=="bhargavi12345") {
+    location.assign("unique_id.html");
+    alert("login successful");
+  
+  } else {
+    location.assign("indexindex1.html")
+    alert("invalid information");
+    
+   return;
+  }
+}
+
+function home()
+{
+  var home1=document.getElementById("email").value;
+  location.assign("about.html")
+}
+</script>
+</div>   
+</body>
+</html>
